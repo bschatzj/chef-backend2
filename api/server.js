@@ -13,7 +13,7 @@ server.use(express.json());
 server.use(cors());
 
 server.use("/api/login", authRoute)
-server.use("api/recipes", recipeRoute)
+server.use("/api/recipes", recipeRoute)
 
 
 server.get("/", (req, res) => {
