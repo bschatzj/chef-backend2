@@ -15,12 +15,12 @@ router.post("/register", (req, res) => {
   } else {
     const hashed = bcrypt.hashSync(user.password, 10);
     user.password = hashed;
-    db("users")
+    db("newUsers")
       .insert(user)
       .then(ids => {
         const id = ids[0];
 
-        db("users")
+        db("newUsers")
           .where({ id })
           .first()
           .then(user => {
@@ -52,7 +52,7 @@ router.post("/login", (req, res) => {
       error: "Please provide a username and password."
     });
   } else {
-    db("users")
+    db("newUsers")
       .where({ username })
       .first()
       .then(user => {

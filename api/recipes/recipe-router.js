@@ -5,7 +5,7 @@ const helpers = require("./helpers")
 const restricted = require("../auth/restricted.js");
 
 router.get(`/`, (req, res) => {
-    Posts.getPost()
+    helpers.getPost()
 
         .then(post => {
             res.status(200).json(post);
@@ -18,7 +18,7 @@ router.get(`/`, (req, res) => {
 router.post("/post", restricted, (req, res) => {
     let post = req.body;
 
-    Posts.add(post)
+    helpers.add(post)
         .then(info => {
             res.status(201).json({
                 info
@@ -32,7 +32,7 @@ router.post("/post", restricted, (req, res) => {
 router.delete("/delete/:id", restricted, (req, res) => {
     let id = req.params.id;
 
-    Posts.remove(id)
+    helpers.remove(id)
         .then(post => {
             res.status(204).end();
         })
@@ -46,7 +46,7 @@ router.delete("/delete/:id", restricted, (req, res) => {
 router.get("/:username", restricted, (req, res) => {
     let username = req.params.username;
 
-    Posts.getByUsername(username)
+    helpers.getByUsername(username)
         .then(post => {
             res.status(201).send(post);
         })
@@ -59,7 +59,7 @@ router.put("/update/:id", restricted, (req, res) => {
     const id = req.params.id;
     const action = req.body;
 
-    Posts.update(id, action)
+    helpers.update(id, action)
         .then(updated => {
             res.status(200).json(updated);
         })
