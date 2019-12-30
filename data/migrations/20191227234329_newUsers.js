@@ -11,6 +11,7 @@ exports.up = function (knex) {
             .notNullable();
         table.string("Location", 128)
             .notNullable();
+        table.string("Bio")
     });
 };
 

@@ -4,11 +4,11 @@ exports.up = function(knex) {
       posts.increments();
       posts.string("chef_name", 255);
       posts.string("recipe_title", 255);
-      posts.string("item_photo", 255);
-      posts.string("item_ingredients", 255);
+      posts.string("recipe_photo", 255);
+      posts.string("recipe_ingredients", 255);
       posts
         .integer("user_id")
-        .notNullable()
+        .unsigned()
         .references("id")
         .inTable("newUsers")
         .onDelete("CASCADE")
