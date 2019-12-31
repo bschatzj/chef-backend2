@@ -7,8 +7,12 @@ exports.up = function (knex) {
             .unique();
         table.string("password")
             .notNullable();
+        table.string("full_name")
+            .notNullable();
         table.string("email", 128)
             .notNullable();
+        table.string("user_picture");
+
         table.string("Location", 128)
             .notNullable();
         table.string("Bio")
