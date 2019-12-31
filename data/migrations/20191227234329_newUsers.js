@@ -12,7 +12,7 @@ exports.up = function (knex) {
         table.string("email", 128)
             .notNullable();
         table.string("user_picture");
-
+        table.string("phone");
         table.string("Location", 128)
             .notNullable();
         table.string("Bio")
