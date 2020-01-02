@@ -5,7 +5,7 @@ const helpers = require("./helpers")
 const restricted = require("../auth/restricted.js");
 
 router.get(`/`, (req, res) => {
-    helpers.getPost()
+    helpers.getPosts()
 
         .then(post => {
             res.status(200).json(post);

@@ -7,7 +7,7 @@ exports.seed = function(knex) {
           chef_name: "Brendan :D",
           recipe_title: "Cereal a la Milk",
           recipe_ingredients: "Cereal of Choice, Milk",
-          user_id: 1
+          user_id: "1"
         }
       ]);
     });

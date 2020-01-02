@@ -7,6 +7,7 @@ const db = require("../../dbconfig");
 
 router.post("/register", (req, res) => {
   const user = req.body;
+  console.log(req.body)
 
   if (!user.username || !user.password || !user.email || !user.location) {
     res.status(400).json({
