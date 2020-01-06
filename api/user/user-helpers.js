@@ -13,5 +13,6 @@ function update(id, update) {
 
 function getUser(id) {
     return db('newUsers')
-    .where({ id })
+    .where( id )
+    .first()
 }
