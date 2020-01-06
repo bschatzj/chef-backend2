@@ -14,5 +14,4 @@ function update(id, update) {
 function getUser(id) {
     return db('newUsers')
     .where( id )
-    .first()
 }
