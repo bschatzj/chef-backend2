@@ -11,7 +11,8 @@ exports.up = function (knex) {
             .notNullable();
         table.string("email", 128)
             .notNullable();
-        table.string("user_picture");
+        table.string("user_picture")
+        .defaultTo("https://static9.depositphotos.com/1575949/1203/v/950/depositphotos_12034707-stock-illustration-smiley-icon.jpg");
         table.string("phone");
         table.string("Location", 128)
             .notNullable();
