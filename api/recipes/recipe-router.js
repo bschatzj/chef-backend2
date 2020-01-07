@@ -41,11 +41,11 @@ router.delete("/delete/:id", (req, res) => {
         });
 });
 
-router.get("/:user_id", (req, res) => {
-    let user_id = req.params.user_id;
-    console.log(user_id)
+router.get("/user/:userId", (req, res) => {
+    let userId = req.params.userId;
+    console.log(userId)
 
-    helpers.getByUserId(user_id)
+    helpers.getByUserId(userId)
         .then(post => {
             res.status(201).json(post);
         })
