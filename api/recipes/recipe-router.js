@@ -15,21 +15,19 @@ router.get(`/`, (req, res) => {
         });
 });
 
-router.post("/post", restricted, (req, res) => {
+router.post("/post", (req, res) => {
     let post = req.body;
 
     helpers.add(post)
         .then(info => {
-            res.status(201).json({
-                info
-            });
+            res.status(201).json(info);
         })
         .catch(err => {
             res.status(500).json(error);
         });
 });
 
-router.delete("/delete/:id", restricted, (req, res) => {
+router.delete("/delete/:id", (req, res) => {
     let id = req.params.id;
 
     helpers.remove(id)
@@ -45,17 +43,18 @@ router.delete("/delete/:id", restricted, (req, res) => {
 
 router.get("/:user_id", (req, res) => {
     let user_id = req.params.user_id;
+    console.log(user_id)
 
     helpers.getByUserId(user_id)
         .then(post => {
-            res.status(201).send(post);
+            res.status(201).json(post);
         })
         .catch(err => {
             res.status(401).json({ error: "User does not have any posts." });
         });
 });
 
-router.put("/update/:id", restricted, (req, res) => {
+router.put("/update/:id", (req, res) => {
     const id = req.params.id;
     const action = req.body;
 

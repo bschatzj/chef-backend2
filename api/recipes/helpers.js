@@ -14,7 +14,7 @@ function getPosts() {
 }
 
 function getByUserId(user_id) {
-  return db("posts").where(user_id = user_id);
+  return db("posts").where(user_id);
 }
 
 function getById(id) {
