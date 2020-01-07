@@ -4,7 +4,8 @@ exports.up = function(knex) {
       posts.increments("id");
       posts.string("chef_name", 255);
       posts.string("recipe_name", 255);
-      posts.string("recipe_photo", 255);
+      posts.string("recipe_photo", 255)
+      .defaultTo("https://www.listchallenges.com/f/lists/ee46c406-4599-42db-b205-005d20936286.jpg");
       posts.string("recipe_ingredients", 255);
       posts.string("ingredients", 255);
       posts.string("cook_time", 255);
