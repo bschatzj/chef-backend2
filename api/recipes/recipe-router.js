@@ -54,6 +54,20 @@ router.get("/user/:userId", (req, res) => {
         });
 });
 
+router.get("/recipeId/:recipeId", (req, res) => {
+    let recipeId = req.params.recipeId;
+    console.log(recipeId)
+
+    helpers.getById(recipeId)
+        .then(post => {
+            res.status(201).json(post);
+        })
+        .catch(err => {
+            res.status(401).json({ error: "User does not have any posts." });
+        });
+});
+
+
 router.put("/update/:id", (req, res) => {
     const id = req.params.id;
     const action = req.body;

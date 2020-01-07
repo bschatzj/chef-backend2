@@ -6,7 +6,8 @@ module.exports = {
   getBy,
   getByUserId,
   remove,
-  update
+  update,
+  getById
 };
 
 function getPosts() {
@@ -19,7 +20,7 @@ function getByUserId(user_id) {
 }
 
 function getById(id) {
-  return db("posts").where({ id });
+  return db("posts").where("id", id).first();
 }
 
 function getBy(filter) {
