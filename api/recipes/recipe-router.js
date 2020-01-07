@@ -43,7 +43,7 @@ router.delete("/delete/:id", restricted, (req, res) => {
         });
 });
 
-router.get("/:user_id", restricted, (req, res) => {
+router.get("/:user_id", (req, res) => {
     let user_id = req.params.user_id;
 
     helpers.getByUserId(user_id)
