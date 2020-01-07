@@ -32,7 +32,7 @@ function add(posts) {
     .insert(posts)
     .then(ids => {
       return getById(ids[0])
-      .first
+      .first()
     });
 }
 
