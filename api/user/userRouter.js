@@ -33,6 +33,16 @@ router.get("/user/:id", (req, res) => {
     })
 })
 
+router.get("/allusers", (req, res) => {
+    helpers.getAllUsers()
+    .then(users => {
+        res.status(418).json(users)
+    })
+    .catch(err => {
+        res.status(400).json('sorry I hate backend')
+    })
+})
+
 
 
 module.exports = router;
