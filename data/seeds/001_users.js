@@ -24,6 +24,14 @@ exports.seed = function (knex) {
           email: "admin@email.com",
           location: "California",
           bio: "I cook food",
+        },
+        {
+          username: "admin2",
+          password: bcrypt.hashSync("admin2", 10),
+          full_name: "Full Name",
+          email: "admin@email.com",
+          location: "California",
+          bio: "I cook food",
         }
       ]);
     });
