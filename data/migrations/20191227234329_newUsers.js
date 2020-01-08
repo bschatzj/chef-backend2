@@ -7,6 +7,7 @@ exports.up = function (knex) {
             .unique();
         table.string("password")
             .notNullable();
+        table.string("confirmPassword")
         table.string("full_name");
         table.string("email", 128);
         table.string("user_picture")
