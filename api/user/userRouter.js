@@ -36,7 +36,7 @@ router.get("/user/:id", (req, res) => {
 router.get("/allusers", (req, res) => {
     helpers.getAllUsers()
     .then(users => {
-        res.status(200).json(users)
+        res.status(200).json(users) 
     })
     .catch(err => {
         res.status(418).json('sorry I hate backend')
